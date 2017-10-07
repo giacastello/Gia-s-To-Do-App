@@ -21,13 +21,34 @@ todos.splice(0,1) //you state how many items you want to delete. In this case it
 
 
 
-var todos = ['item 1', 'item 2', 'item 3']
+var todos = ['item 1', 'item 2', 'item 3'];
+
+// function to display to-dos.
 function displayTodos (){
-  console.log('My to dos:' todos);
+  console.log('My to-dos:', todos);
 }
 
-displayTodos () // the parenthesis tells javascript to run a function.
+displayTodos () // the parenthesis tells javascript to run a function. It will show the list.
 
-function addTodo (){
-  todos.push ('new todo') // you added a new item for the array todos.
+// function to add to-dos.
+function addTodo(todo) { //
+  todos.push(todo); // added a new item for the array todos.
+  displayTodos (); //an example of functions inside other functions. This also displays the new array.
+}
+
+addTodo ('new stuff') // give the name new stuff to the new todo in the array
+displayTodos()
+
+// function to change to-dos.
+function changeTodo(position, newValue) { //give the parametres for changing
+  todos[position] = newValue; // state them as equals
+  displayTodos(); // display My to-dos after each change
+}
+
+
+// function to delete to-dos.
+function deleteTodo (position) {
+  todos.splice(position,1);
+  // the first states position of item we delete. As it will be one item, the second will always be one
+  displayTodos();
 }
