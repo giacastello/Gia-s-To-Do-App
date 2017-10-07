@@ -1,5 +1,5 @@
 
-
+/*
 //store to-dos in a variable
 var todos = ['item 1', 'item 2', 'item 3']
 
@@ -17,3 +17,17 @@ todos[0] = 'new item 1'
 
 //delete an item
 todos.splice(0,1) //you state how many items you want to delete. In this case it will delete number 1.
+*/
+
+
+
+var todos = ['item 1', 'item 2', 'item 3']
+function displayTodos (){
+  console.log('My to dos:' todos);
+}
+
+displayTodos () // the parenthesis tells javascript to run a function.
+
+function addTodo (){
+  todos.push ('new todo') // you added a new item for the array todos.
+}
