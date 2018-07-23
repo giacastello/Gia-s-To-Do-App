@@ -1,3 +1,4 @@
+git
 var todoList = { // todoList.addTodo should add objects (to store more info, like completed)
   todos: [], // We leave it blank so we can give functions as objects
   displayTodos: function () { // it should have a displayTodos method
