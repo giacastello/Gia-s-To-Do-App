@@ -2,8 +2,7 @@
 var todos = ['item 1', 'item 2', 'item 3']
 
 //display to-dos when you call them
-console.log('My to-dos:'
-  todos);
+console.log('My to-dos:', todos);
 
 //add to-dos
 todos.push('item 4') // push command lets you add something to an array.

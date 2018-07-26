@@ -1,3 +1,19 @@
+// objects: to group related data and functions together.
+// properties: things inside an object. Format:   nameOfProperty: 'value',
+// Method: A property of an object that is a function.
+
+/*
+--example
+var myComputer = {
+  operatingSystem: 'mac',
+  screenSize: '15 inches',
+  purchaseYear: 2011
+};
+you can call each property value like--myComputer.screenSize--on console
+for example
+*/
+
+
 
 var todoList = {
   // it should store a todos array on an object
