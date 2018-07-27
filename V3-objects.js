@@ -18,7 +18,7 @@ for example
 var todoList = {
   // it should store a todos array on an object
   todos: ['item 1', 'item 2', 'item 3'], //set value to property
-  displayTodos: function() { // it should have a displayTodos method
+  displayTodos: function() { // it should have a displayTod os method
     console.log('My Todos:', this.todos);
   },
 
