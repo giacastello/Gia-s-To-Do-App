@@ -1,9 +1,8 @@
-// .displayTodos should show .todoText
-// .displayTodos should tell you if .todos is empty
-//. displayTodos should show .completed
+// .displayTodos method should show .todoText property
+// .displayTodos method should tell you if .todos property is empty
+// .displayTodos method should show if your todo is .completed
 
 var todoList = { 
-  // todoList.addTodo should add objects (to store more info, like completed)
   todos: [], // We leave it blank so we can give functions as objects
   displayTodos: function() { 
       if (this.todos.length ===0){
