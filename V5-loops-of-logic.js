@@ -3,13 +3,15 @@
 // .displayTodos method should show if your todo is .completed
 
 var todoList = { 
-  todos: [], // We leave it blank so we can give functions as objects
+  todos: [], // We leave it blank so we can give functions properties as objects
   displayTodos: function() { 
       if (this.todos.length ===0){
-        console.log('Your todo list is empty!'); // .displayTodos should tell you if .todos is empty
+        // .displayTodos should tell you if .todos is empty
+        console.log('Your todo list is empty!'); 
       } else {
-      console.log('My Todos:');// it should have a displayTodos method
-        // .displayTodos should show .todoText
+        // it should have a displayTodos method
+        console.log('My Todos:');
+        // .displayTodos should show if the to-do is completed (x) or not ( )
       for (var i = 0; i < this.todos.length; i++){
         if (this.todos[i].completed === true) {
           console.log('(x)', this.todos[i].todoText);
@@ -19,6 +21,8 @@ var todoList = {
       }
     } 
   },
+
+  // If I want to show one as completed, I'll use todoList.toggleCompleted(numberofitem) 
   
   //it should have an addTodo Method
   addTodo: function(todoText) { 
