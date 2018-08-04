@@ -70,20 +70,12 @@ var todoList = {
       this.displayTodos();
     }
   };
-  
-  // We want to access to the display to-dos button
-  var displayTodosButton = document.getElementById('displayTodosButton');
-  // We want to access to the toggleAll button
-  var toggleAllButton = document.getElementById('toggleAllButton');
-  
-  
-  //We want to run displayTodos method, when we click the display to-dos button.
-  displayTodosButton.addEventListener('click', function() {
-    todoList.displayTodos();
-  });
-  
-  //We want to run toggleAll method, when we click the display to-dos button.
-  toggleAllButton.addEventListener('click', function() {
-    todoList.toggleAll();
-    todoList.displayTodos();
-  });
+
+  var handlers = { // We want this object to handle different events
+    displayTodos: function() {
+      todoList.displayTodos();
+    },
+    toggleAll: function() {
+      todoList.toggleAll();
+    }
+  };
