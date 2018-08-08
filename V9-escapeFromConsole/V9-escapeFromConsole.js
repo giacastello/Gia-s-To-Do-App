@@ -113,9 +113,17 @@ var view = { //Object  responsible to display on screen
     todosUl.innerHTML = ''; //to clear the ul before it starts adding things to the list.
     for (var i = 0; i < todoList.todos.length; i++) { //it will display a bullet each time we addTodo
       var todoLi = document.createElement('li');
-      todoLi.textContent = todoList.todos[i].todoText; //So we can access each item in my array
+      var todo = todoList.todos[i];
+      var todoTextWithCompletion = '';
+      
+      if (todo.completed === true) {
+        todoTextWithCompletion = '(x) ' + todo.todoText;
+      } else {
+        todoTextWithCompletion = '( ) ' + todo.todoText;
+      }
+      
+      todoLi.textContent = todoTextWithCompletion;
       todosUl.appendChild(todoLi);
     }
   }
 };
-
