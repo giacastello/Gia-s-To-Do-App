@@ -90,9 +90,12 @@ var todoList = {
         }
         
         todoLi.textContent = todoTextWithCompletion;
+        todosLi.appendChild(this.createDeleteButton()); 
         todosUl.appendChild(todoLi);
       }  
     },
+
+    // A way to create Delete Buttons
     createDeleteButton: function() { //To create a button every time we create a to-do
       var deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
