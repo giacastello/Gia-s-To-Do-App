@@ -88,7 +88,8 @@ var todoList = {
         } else {
           todoTextWithCompletion = '( ) ' + todo.todoText;
         }
-        
+        // Each li shoud have an id that has the to-do position
+        todoLi.id = i;
         todoLi.textContent = todoTextWithCompletion;
         todosLi.appendChild(this.createDeleteButton()); 
         todosUl.appendChild(todoLi);
