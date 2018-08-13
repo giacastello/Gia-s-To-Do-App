@@ -56,10 +56,8 @@ var todoList = {
       changeTodoTextInput.value = '';
       view.displayTodos();
     },
-    deleteTodo: function() {
-      var deleteTodoPositionInput = document.getElementById('deleteTodoPositionInput');
-      todoList.deleteTodo(deleteTodoPositionInput.valueAsNumber);
-      deleteTodoPositionInput.value = '';
+    deleteTodo: function(position) {
+      todoList.deleteTodo(position);
       view.displayTodos();
     },
     toggleCompleted: function() {
@@ -88,15 +86,15 @@ var todoList = {
         } else {
           todoTextWithCompletion = '( ) ' + todo.todoText;
         }
+        
         // Each li shoud have an id that has the to-do position
         todoLi.id = i;
         todoLi.textContent = todoTextWithCompletion;
-        todosLi.appendChild(this.createDeleteButton()); 
+        // Add the button behind the new to-do
+        todoLi.appendChild(this.createDeleteButton()); 
         todosUl.appendChild(todoLi);
       }  
     },
-
-    // A way to create Delete Buttons
     createDeleteButton: function() { //To create a button every time we create a to-do
       var deleteButton = document.createElement('button');
       deleteButton.textContent = 'Delete';
@@ -104,8 +102,17 @@ var todoList = {
       return deleteButton;
     }
   };
+  
   var todosUl = document.querySelector('ul');
-
+  
   todosUl.addEventListener('click', function(event) {
     console.log(event.target.parentNode.id);
-});
+    
+    // Get the element that was clicked on
+    var elementClicked = event.target;
+    
+    // Check if the elementClicked is a delete button
+    if (elementClicked.className === 'deleteButton') {
+      handlers.deleteTodo(parseInt(elementClicked.parentNode.id)); 
+    }
+  });
